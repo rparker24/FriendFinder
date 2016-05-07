@@ -166,11 +166,6 @@
 	<script type="text/javascript">
 		// var dataOk;
 		$('#submit').on('click', function() {
-			// $('.form-control').each(function() {
-			// 	if($(this).val() === '') {
-			// 		dataOk = false;
-			// 	}
-			// });
 
 			var newFriend = {
 				name: $('#name').val().trim(),
@@ -180,10 +175,8 @@
 
 			var currentURL = window.location.origin;
 
-		  $.post(currentURL + "/api/friends", newFriend, function(data, status) {
-		    // console.log(status);
+		  $.post(currentURL + "/api/friends", newFriend, function(data) {
 		    if(data) {
-		    	// console.log(newFriend);
 			  	console.log('You\'ve been added to the Friends database');
 		    }
 		  });
